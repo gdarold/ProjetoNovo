@@ -4,6 +4,7 @@ import br.edu.ifc.projeto.sistema.view.ProdutoGUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextPane;
 
@@ -44,11 +45,32 @@ public class TelaPrincipal extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ProdutoGUI tela = new ProdutoGUI();
-                tela.setVisible(true);
-                desktop.add(tela);
+                //tela.setVisible(true);
+                //desktop.add(tela);
+                criarTela(tela);
             }
         });
     }
+    
+    private void criarTela(JInternalFrame tela){
+        boolean telaExistente = false;
+        for (JInternalFrame framenaTela : desktop.getAllFrames()) {
+            if(tela.getName().equals(framenaTela.getName())){
+                telaExistente = true;
+            break;
+        }
+        }
+        
+        if(telaExistente){
+          tela.setVisible(true);
+          desktop.add(tela);
+            
+        }
+        
+        
+    }
+    
+    
     
     public JTextPane getMensagens(){
         return mensagens;
