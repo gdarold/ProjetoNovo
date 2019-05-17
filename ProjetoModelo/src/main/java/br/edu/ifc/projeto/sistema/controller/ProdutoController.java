@@ -24,7 +24,7 @@ public class ProdutoController implements ProdutoListener {
     public ProdutoController(JInternalFrame tela) {
         this.tela = (ProdutoGUI) tela;
 
-        lista.add(new Produto(1L, "Macarrão", 5.50));
+        lista.add(new Produto(1L, "Macarrão",10,"macarrao saboroso", 5.50));
     }
 
     @Override

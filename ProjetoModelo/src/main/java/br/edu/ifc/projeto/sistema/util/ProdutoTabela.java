@@ -18,13 +18,16 @@ import javax.swing.table.TableColumnModel;
  */
 public class ProdutoTabela extends AbstractTableModel {
 
-    private String colunas[] = {"id", "nome", "valor", "objeto"};
+    private String colunas[] = {"id", "nome", "quantidade", "descricao", "valor", "objeto"};
+
     private List<?> lista;
 
     private final int COLUNA_ID = 0;
     private final int COLUNA_NOME = 1;
-    private final int COLUNA_VALOR = 2;
-    private final int COLUNA_OBJETO = 3;
+    private final int COLUNA_QTDADE = 2;
+    private final int COLUNA_DESCRICAO = 3;
+    private final int COLUNA_VALOR = 4;
+    private final int COLUNA_OBJETO = 5;
 
     public ProdutoTabela(List<?> lista) {
         this.lista = lista;
@@ -52,6 +55,10 @@ public class ProdutoTabela extends AbstractTableModel {
                 return Long.class;
             case COLUNA_NOME:
                 return String.class;
+            case COLUNA_QTDADE:
+                return Integer.class;
+            case COLUNA_DESCRICAO:
+                return String.class;
             case COLUNA_VALOR:
                 return Character.class;
             default:
@@ -68,6 +75,11 @@ public class ProdutoTabela extends AbstractTableModel {
                 return aluno.getId();
             case COLUNA_NOME:
                 return aluno.getNome();
+            case COLUNA_QTDADE:
+                return aluno.getQuantidade();
+            case COLUNA_DESCRICAO:
+                return aluno.getDescricao();
+
             case COLUNA_VALOR:
                 return aluno.getValor();
             case COLUNA_OBJETO:
@@ -87,6 +99,14 @@ public class ProdutoTabela extends AbstractTableModel {
             case COLUNA_NOME:
                 aluno.setNome(String.valueOf(aValue));
                 break;
+            case COLUNA_QTDADE:
+                aluno.setQuantidade(Integer.parseInt(aValue.toString()));
+                break;
+
+            case COLUNA_DESCRICAO:
+                aluno.setDescricao(String.valueOf(aValue));
+                break;
+
             case COLUNA_VALOR:
                 aluno.setValor(Double.parseDouble(aValue.toString()));
                 break;

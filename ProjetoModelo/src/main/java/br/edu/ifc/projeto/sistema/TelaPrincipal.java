@@ -61,7 +61,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         }
         }
         
-        if(telaExistente){
+        if(!telaExistente){
           tela.setVisible(true);
           desktop.add(tela);
             
