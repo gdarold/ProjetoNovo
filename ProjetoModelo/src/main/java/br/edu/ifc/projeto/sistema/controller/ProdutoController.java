@@ -64,6 +64,8 @@ public class ProdutoController implements ProdutoListener {
             tela.montarTabela(dao.listarTodos());
         } catch (Exception e) {
             e.printStackTrace();
+            
+            
         }
     }
 
