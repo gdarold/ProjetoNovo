@@ -45,7 +45,7 @@ public class ProdutoController implements ProdutoListener {
 //            });
             // Adiciona na lista
 //            salvou = lista.add(produto);
-            salvou = dao.atualizar(produto);
+            salvou = dao.atualizar(produto, produto.getId());
         }
         if (salvou) {
             tela.limparTela();
@@ -71,7 +71,7 @@ public class ProdutoController implements ProdutoListener {
     public boolean excluir(Produto produto) {
         try {
 //        boolean excluir = lista.remove(produto);
-            boolean excluir = dao.excluir(produto);
+            boolean excluir = dao.excluir(produto.getId());
 
             if (excluir) {
                 tela.mostrarMensagem("Produto Excluido com Sucesso!");
