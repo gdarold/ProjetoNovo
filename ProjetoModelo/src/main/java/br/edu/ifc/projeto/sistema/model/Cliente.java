@@ -18,14 +18,18 @@ public class Cliente {
     private Date dtnascimento;
     private String telefone;
     private String endereco;
+    private Boolean status;
 
-    public Cliente(Long id, String nome, Date dtnascimento, String telefone, String endereco) {
+    public Cliente(Long id, String nome, Date dtnascimento, String telefone, String endereco, Boolean status) {
         this.id = id;
         this.nome = nome;
         this.dtnascimento = dtnascimento;
         this.telefone = telefone;
         this.endereco = endereco;
+        this.status = status;
     }
+
+   
 
     public Long getId() {
         return id;
@@ -66,6 +70,16 @@ public class Cliente {
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+
+   
 
     
     
