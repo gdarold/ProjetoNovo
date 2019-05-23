@@ -109,13 +109,14 @@ public class ProdutoDAO implements GenericDAO<Produto, Long> {
 
     @Override
     public Produto getPorId(Long id) throws SQLException {
-        Produto p = new Produto();
+        Produto p = null;
         ResultSet rs;
         try {
             PreparedStatement ps = DatabaseConnection.getInstance().getConnection().prepareStatement(SQL_SELECT_BY_ID);
             ps.setLong(1, id);
             rs = ps.executeQuery();
-            while (rs.next()) {
+            if (rs.next()) {
+                p = new Produto();
                 p.setId(rs.getLong("id"));
                 p.setNome(rs.getString("nome"));
                 p.setValor(rs.getDouble("valor"));

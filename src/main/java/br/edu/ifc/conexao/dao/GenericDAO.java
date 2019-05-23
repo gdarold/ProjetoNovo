@@ -10,4 +10,7 @@ public interface GenericDAO<K, I extends Number> {
     List <K> listarTodos()  throws SQLException;
     K getPorId(I id) throws SQLException;
     
+    
+    
+    
 }
