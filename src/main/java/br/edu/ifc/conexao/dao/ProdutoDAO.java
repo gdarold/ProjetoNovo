@@ -120,7 +120,7 @@ public class ProdutoDAO implements GenericDAO<Produto, Long> {
                 p.setId(rs.getLong("id"));
                 p.setNome(rs.getString("nome"));
                 p.setValor(rs.getDouble("valor"));
-
+                // teste
             }
             DatabaseConnection.commit();
             return p;
