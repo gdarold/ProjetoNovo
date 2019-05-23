@@ -1,0 +1,6 @@
+br/edu/ifc/conexao/util/ArquivoUtil.class
+br/edu/ifc/conexao/util/DatabaseUtil.class
+br/edu/ifc/conexao/model/Produto.class
+br/edu/ifc/conexao/dao/GenericDAO.class
+br/edu/ifc/conexao/db/DatabaseConnection.class
+br/edu/ifc/conexao/dao/ProdutoDAO.class
